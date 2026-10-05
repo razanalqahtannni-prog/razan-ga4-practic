@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Razan E-commerce Practice</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f7f4ef;color:#222}
+header{padding:24px;text-align:center;background:#fff}
+nav a{margin:0 10px;color:#333;text-decoration:none}
+main{max-width:900px;margin:40px auto;padding:20px}
+.hero{background:#fff;padding:40px;border-radius:16px;text-align:center}
+.products{display:flex;gap:20px;flex-wrap:wrap;margin-top:25px}
+.card{background:#fff;padding:20px;border-radius:14px;flex:1;min-width:220px}
+button{padding:10px 16px;border:0;border-radius:8px;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+<h1>Razan E-commerce Practice</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="about.html">About</a>
+</nav>
+</header>
+
+<main>
+<section class="hero">
+<h2>Google Analytics Practice Store</h2>
+<p>A small demo website for learning GA4, events, traffic and conversions.</p>
+<button id="shopBtn">Explore Products</button>
+</section>
+
+<div class="products">
+<div class="card">
+<h3>Phone Case</h3>
+<p>SAR 49</p>
+<button class="buyBtn" data-product="Phone Case">Add to Cart</button>
+</div>
+<div class="card">
+<h3>Smart Watch</h3>
+<p>SAR 129</p>
+<button class="buyBtn" data-product="Smart Watch">Add to Cart</button>
+</div>
+</div>
+</main>
+
+<script>
+document.getElementById("shopBtn").addEventListener("click", () => {
+  window.location.href = "products.html";
+});
+document.querySelectorAll(".buyBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert(btn.dataset.product + " added to cart!");
+  });
+});
+</script>
+</body>
+</html>
